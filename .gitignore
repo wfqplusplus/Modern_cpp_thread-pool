@@ -1,3 +1,9 @@
+#my
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.vs
 # Prerequisites
 *.d
 
