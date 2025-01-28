@@ -1,13 +1,2 @@
-﻿  main.cpp
-  Thread_Pool.cpp
-F:\C++\A\Modern_cpp_thread-pool\ThreadPool\Thread_Pool.h(145,7): error C2011: “Task”:“class”类型重定义
-  (编译源文件“main.cpp”)
-      F:\C++\A\Modern_cpp_thread-pool\ThreadPool\Thread_Pool.h(123,7):
-      参见“Task”的声明
-  
-F:\C++\A\Modern_cpp_thread-pool\ThreadPool\Thread_Pool.h(145,7): error C2011: “Task”:“class”类型重定义
-  (编译源文件“Thread_Pool.cpp”)
-      F:\C++\A\Modern_cpp_thread-pool\ThreadPool\Thread_Pool.h(123,7):
-      参见“Task”的声明
-  
-  正在生成代码...
+﻿  Thread_Pool.cpp
+  ThreadPool.vcxproj -> F:\C++\A\Modern_cpp_thread-pool\ThreadPool\Debug\ThreadPool.exe

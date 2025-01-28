@@ -105,7 +105,7 @@ class Result
 {
 public:
 	Result(std::shared_ptr<Task> task, bool isValid = true);
-	~Result() = default;
+	~Result();
 
 	// 问题一：setVal方法，获取任务执行完的返回值的
 	void setVal(Any any);
@@ -133,6 +133,7 @@ public:
 
 private:
 	Result* result_; // Result对象的声明周期 》 Task的
+	//std::weak_ptr<Result> result_;
 };
 
 // 两种线程池模式

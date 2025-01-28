@@ -179,9 +179,10 @@ Task::Task() : result_(nullptr)
 
 void Task::exec()
 {
+	Any &&result = run();
 	if (result_ != nullptr)
 	{
-		result_->setVal(run());  // 这里发生多态调用
+		result_->setVal(std::move(result));  // 这里发生多态调用
 	}
 }
 
@@ -196,6 +197,11 @@ Result::Result(std::shared_ptr<Task> task, bool isValid)
 	, isValid_(isValid)
 { 
 	task_->setResult(this);
+}
+
+Result::~Result()
+{
+	task_->setResult(nullptr);
 }
 
 void Result::setVal(Any any)    // Task 调用
