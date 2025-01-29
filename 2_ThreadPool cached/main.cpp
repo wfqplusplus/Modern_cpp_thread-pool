@@ -100,26 +100,26 @@ private:
 
 int main()
 {
-    //{
-    //    ThreadPool pool;
-    //    pool.setMode(PoolMode::MODE_CACHED);
-    //    // 开始启动线程池
-    //    pool.start(2);
+    {
+        Thread_Pool pool;
+        pool.setMode(PoolMode::MODE_CACHED);
+        // 开始启动线程池
+        pool.start(2);
 
-    //    // linux上，这些Result对象也是局部对象，要析构的！！！
-    //    Result res1 = pool.submitTask(std::make_shared<MyTask>(1, 100000000));
-    //    Result res2 = pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
-    //    pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
-    //    pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
-    //    pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
+        // linux上，这些Result对象也是局部对象，要析构的！！！
+        Result res1 = pool.submitTask(std::make_shared<MyTask>(1, 100000000));
+        Result res2 = pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
+        pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
+        pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
+        pool.submitTask(std::make_shared<MyTask>(100000001, 200000000));
 
-    //    //uLong sum1 = res1.get().cast_<uLong>();
-    //    //cout << sum1 << endl; 
-    //} // 这里Result对象也要析构!!! 在vs下，条件变量析构会释放相应资源的
-    //
-    //cout << "main over!" << endl;
-    //getchar();
-#if 1
+        //uLong sum1 = res1.get().cast_<uLong>();
+        //cout << sum1 << endl; 
+    } // 这里Result对象也要析构!!! 在vs下，条件变量析构会释放相应资源的
+    
+    cout << "main over!" << endl;
+    getchar();
+#if 0
     // 问题：ThreadPool对象析构以后，怎么样把线程池相关的线程资源全部回收？
     {
         Thread_Pool pool;
